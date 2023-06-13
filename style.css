@@ -1,0 +1,98 @@
+body {
+  background-color: #111;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.button-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.button {
+  position: relative;
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.small-button {
+    padding:4px 8px; 
+    font-size:14px; 
+    color:#fff; 
+    border:none; 
+    text-decoration:none; 
+}
+
+.button,
+.small-button {
+    transition: all .3s ease-in-out; 
+}
+
+.small-button:hover,
+.button:hover {
+    color:#f20c3c; 
+    font-weight:bold; 
+}
+
+.button::before,
+.button::after {
+    content:'';
+    position:absolute; 
+    left:0; 
+    bottom:-5px; 
+    width:0%; 
+    height:3px; 
+    background-color:#f20c3c; 
+    transform-origin:left; 
+    transition:.3s ease-in-out; 
+}
+
+.button::before {
+    transform-origin:right; 
+}
+
+.button:hover::before {
+    width:100%; 
+}
+
+.button:hover::after {
+    width:100%; 
+    transform-origin:right; 
+    transition-delay:.3s; 
+}
+
+@media screen and (max-width:1080px) {
+    .button-section {
+        flex-direction:column; 
+        align-items:center; 
+    }
+    
+    .button,
+    .small-button {
+        width:80%; 
+        text-align:center; 
+        margin-bottom:-15px; 
+        margin-top:.5em; 
+        margin-bottom:.5em; 
+    }
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
